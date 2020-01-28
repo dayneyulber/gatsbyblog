@@ -14,16 +14,14 @@ const PostTemplate = ({ data: post }) => (
 
 
 export const query = graphql`
-query($slug:String!) {
-	markdownRemark(fields:{
-    slug: { eq:$slug }
-  }) {
-    html
-    frontmatter {
-      title
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        title
+      }
     }
   }
-}
 `
 
 export default PostTemplate
